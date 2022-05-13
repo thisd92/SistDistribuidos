@@ -1,4 +1,6 @@
 import java.rmi.server.UnicastRemoteObject;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.rmi.RemoteException;
 import java.util.Date;
 import java.rmi.registry.*;
@@ -35,23 +37,27 @@ public class ServidorRMINumero extends UnicastRemoteObject implements InterfaceR
                     return 1;
             }
             return fatorial(num - 1)* num;
-
     }
 
     public String bemvindo(String nome){
-            return "Bem Vindo, " + nome;
+        return "Bem Vindo, " + nome;    
     }
 
-    public void data()
+    public String data()
     {
-            Date datahoje = new Date();
-            System.out.println(datahoje.toString());
-    }
+        Date datahoje = new Date();
+        DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+        String dataFormatada = dateFormat.format(datahoje);
+        
+        return dataFormatada;
+        }
 
-    public void hora()
+    public String hora()
     {
-            Date datahora = new Date();
-            System.out.println(datahora.toString());
+        Date datahoje = new Date();
+        DateFormat horaFormat = new SimpleDateFormat("HH:mm:ss");
+        String horaFormatada = horaFormat.format(datahoje);
+        return horaFormatada;
     }
 
     public void cpf(String numCpf)

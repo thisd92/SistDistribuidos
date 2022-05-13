@@ -7,13 +7,14 @@ public class ClienteRMINumero
 {
 
 	public static void menu(){
+		System.out.println("Escolha uma opção");
 		System.out.println("1 - Fatorial");
 		System.out.println("2 - Data");
 		System.out.println("3 - Hora");
 		System.out.println("4 - Bem Vindo");
 		System.out.println("5 - Ordena Lista");
 		System.out.println("6 - CPF");
-		System.out.println("7 - Sair");
+		System.out.println("7 - Sair\n");
 	}
 	static public void main (String rmi[])
 	{
@@ -21,10 +22,11 @@ public class ClienteRMINumero
 		{
 			//String localizacao = "//192.168.25.92/data";
                         //String localizacao = "127.0.0.1/data";
-			InterfaceRMINumero objeto = (InterfaceRMINumero) Naming.lookup ("rmi://localhost:1099/Servico");
+			InterfaceRMINumero objeto = (InterfaceRMINumero) Naming.lookup ("rmi://localhost:1099/data");
 			
 			int opcao;
 			Scanner entrada = new Scanner(System.in);
+			
 			do{
 				menu();
 				opcao = entrada.nextInt();
@@ -32,28 +34,30 @@ public class ClienteRMINumero
 				switch(opcao){
 					case 1:
 						Scanner scan = new Scanner(System.in);
-						System.out.println("Digite o número:");
+						System.out.println("\nDigite um número:");
 						int num;
 						num = scan.nextInt();
-						objeto.fatorial(num);
+						//objeto.fatorial(num);
+						int res = objeto.fatorial(num);
+						System.out.println("Resultado do fatorial: " + res + "\n");
 						break;
 					case 2:
-						objeto.data();
+						System.out.println("\n" + objeto.data() + "\n");
 						break;
 					case 3:
-						objeto.hora();
+						System.out.println("\n" + objeto.hora() + "\n");
 						break;
 					case 4:
-                                                Scanner scan4 = new Scanner(System.in);
-						System.out.println("Digite o número:");
+						Scanner scan4 = new Scanner(System.in);
+						System.out.println("\nDigite seu nome:");
 						String nome;
 						nome = scan4.next();
-						objeto.bemvindo(nome);
+						System.out.println("\n" + objeto.bemvindo(nome) + "\n");
 						break;
 					case 5:
-                                                Scanner scan3 = new Scanner(System.in);
+						Scanner scan3 = new Scanner(System.in);
 						System.out.println("Digite o número:");
-                                                int[] arrNum = null;
+						int[] arrNum = null;
 						objeto.ordenar(arrNum);
 						break;
 
@@ -69,9 +73,6 @@ public class ClienteRMINumero
 						System.out.println("Opção inválida");
 				}
 			}while(opcao != 7);
-
-			//System.out.println ("2 ao quadrado eh: " + objeto.quadrado(2));
-			//System.out.println ("2 ao cubo eh: " + objeto.cubo(2));
 		} 
 		catch (Exception exc) 
 		{
