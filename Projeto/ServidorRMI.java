@@ -2,6 +2,7 @@ import java.rmi.server.UnicastRemoteObject;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.rmi.RemoteException;
+import java.util.Arrays;
 import java.util.Date;
 import java.rmi.registry.*;
 import java.io.Serializable;
@@ -104,8 +105,8 @@ public class ServidorRMI extends UnicastRemoteObject implements InterfaceRMI, Se
         
     }
 
-    public void ordenar(int[] num)
+    public String ordenar(String arrNum)
     {
-        System.out.println(num);
+        return arrNum;
     }
 }

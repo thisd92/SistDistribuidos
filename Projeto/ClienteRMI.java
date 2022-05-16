@@ -54,9 +54,9 @@ public class ClienteRMI
 						break;
 					case 5:
 						Scanner scan3 = new Scanner(System.in);
-						System.out.println("Digite o número:");
-						int[] arrNum = null;
-						objeto.ordenar(arrNum);
+						System.out.println("Digite a lista de números separados apenas por virgula:");
+						String arrNum = scan3.next();
+						System.out.println(objeto.ordenar(arrNum));
 						break;
 
 					case 6:
