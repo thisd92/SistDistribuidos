@@ -63,7 +63,7 @@ public class ClienteRMI
 						Scanner scan2 = new Scanner(System.in);
 						System.out.println("Digite o CPF:");
 						String numCpf = scan2.next();
-						objeto.cpf(numCpf);
+						System.out.println(objeto.cpf(numCpf));
 						break;
 					case 7:
 						break;

@@ -8,5 +8,5 @@ public interface InterfaceRMI extends Remote
 	public String hora() throws RemoteException;
 	public String bemvindo(String nome) throws RemoteException;
 	public void ordenar(int[] arrNum) throws RemoteException;
-	public void cpf(String numCPF) throws RemoteException;
+	public String cpf(String numCPF) throws RemoteException;
 }
