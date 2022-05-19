@@ -56,8 +56,7 @@ public class ClienteRMI
 						Scanner scan3 = new Scanner(System.in);
 						System.out.println("Digite a lista de números separados apenas por virgula:");
 						String arrNum = scan3.next();
-						String[] arrayString = arrNum.split(arrNum, ',');
-						//int[] array;
+						String[] arrayString = arrNum.split(",");
 						for(int i = 0; i < arrayString.length; i++){
 							array[i] = Integer.parseInt(arrayString[i]);
 						}
