@@ -107,10 +107,10 @@ public class ServidorRMI extends UnicastRemoteObject implements InterfaceRMI, Se
         
     }
 
-    public int[] ordenar(int[] array)
+    public String ordenar(int[] array)
     {
        Arrays.sort(array);
 
-        return array;
+        return Arrays.toString(array);
     }
 }

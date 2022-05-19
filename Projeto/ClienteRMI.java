@@ -6,7 +6,6 @@ import java.rmi.Naming;
 public class ClienteRMI
 {
 
-	static int array[];
 	public static void menu(){
 		System.out.println("Escolha uma opção");
 		System.out.println("1 - Fatorial");
@@ -54,13 +53,15 @@ public class ClienteRMI
 						break;
 					case 5:
 						Scanner scan3 = new Scanner(System.in);
-						System.out.println("Digite a lista de números separados apenas por virgula:");
+						System.out.println("Digite 5 números separados apenas por virgula:");
 						String arrNum = scan3.next();
-						String[] arrayString = arrNum.split(",");
+						String[] arrayString = arrNum.split(",", 0);
+						int[] array = new int[5];
 						for(int i = 0; i < arrayString.length; i++){
 							array[i] = Integer.parseInt(arrayString[i]);
 						}
-						System.out.println(objeto.ordenar(array));
+
+						System.out.println("Lista ordenada: " + objeto.ordenar(array) + "\n");
 						break;
 					case 6:
 						Scanner scan2 = new Scanner(System.in);
