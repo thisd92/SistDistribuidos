@@ -6,6 +6,7 @@ import java.rmi.Naming;
 public class ClienteRMI
 {
 
+	static int array[];
 	public static void menu(){
 		System.out.println("Escolha uma opção");
 		System.out.println("1 - Fatorial");
@@ -35,7 +36,6 @@ public class ClienteRMI
 						System.out.println("\nDigite um número:");
 						int num;
 						num = scan.nextInt();
-						//objeto.fatorial(num);
 						int res = objeto.fatorial(num);
 						System.out.println("Resultado do fatorial: " + res + "\n");
 						break;
@@ -56,9 +56,13 @@ public class ClienteRMI
 						Scanner scan3 = new Scanner(System.in);
 						System.out.println("Digite a lista de números separados apenas por virgula:");
 						String arrNum = scan3.next();
-						System.out.println(objeto.ordenar(arrNum));
+						String[] arrayString = arrNum.split(arrNum, ',');
+						//int[] array;
+						for(int i = 0; i < arrayString.length; i++){
+							array[i] = Integer.parseInt(arrayString[i]);
+						}
+						System.out.println(objeto.ordenar(array));
 						break;
-
 					case 6:
 						Scanner scan2 = new Scanner(System.in);
 						System.out.println("Digite o CPF:");
